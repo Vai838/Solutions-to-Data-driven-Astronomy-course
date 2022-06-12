@@ -4,23 +4,17 @@
 import numpy as np
 
 
-def mean_datasets(a):
-    print(a)
-   # datasets =[]
-   # for item in a:
-   #   datasets.append(item)
-   # print(datasets)
-   # for something in datasets:
-   #   first_element =[]
-   #   b = np.loadtxt(something, delimiter =',')
-   #   first_element.append(b[0,0])
-   #   print(first_element)  
-    contents =[]
-    for afile in a:
-        b = np.loadtxt(afile, delimiter =',')
-        #print(b)
-        contents.append(b)
-    print(contents)
+def mean_datasets(file_names):
+    count = 0
+    for a_file in file_names:
+        b = np.loadtxt(a_file, delimiter =',')
+        if count == 0:
+          c = b
+        else:
+           c = c + b
+        count = count + 1  
+    mean = np.round_(c/count , decimals=1 , out=None)
+    return mean
     
     
 
