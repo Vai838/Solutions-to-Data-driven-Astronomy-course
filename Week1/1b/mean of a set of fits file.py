@@ -12,8 +12,8 @@ def mean_fits(file):
         if count == 0:
           stack = data
         else:
-           stack = stack + data
-        count = count + 1  
+           stack += data
+        count += 1  
     mean = stack/count
     return mean
   
@@ -28,6 +28,6 @@ if __name__ == '__main__':
 
   # You can also plot the result:
   import matplotlib.pyplot as plt
-  plt.imshow(data.T, cmap=plt.cm.viridis)
+  plt.imshow(data, cmap=plt.cm.viridis)
   plt.colorbar()
   plt.show()
